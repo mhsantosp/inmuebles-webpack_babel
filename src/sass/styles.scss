@@ -1,0 +1,17 @@
+$color-fondo: rgb(0, 153, 255);
+$color-texto: white;
+body {
+  background-color: $color-fondo;
+  color: $color-texto;
+  a {
+    color: red;
+    font-size: 18px;
+  }
+  h1 {
+    color: green;
+  }
+  p {
+    color: purple;
+    font-size: 25px;
+  }
+}
