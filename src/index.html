@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://daiclover.com/static/media/daiclover3.dc475c68.png" type="image/x-icon">
+    <title>Inmuebles WebPack and Babel</title>
+  </head>
+
+  <body>
+    <main class="container-fluid">
+      <header>
+        <section class="row mt-3">
+          <artcle class="col-1">
+            <img src="https://daiclover.com/static/media/daiclover3.dc475c68.png" class="img-fluid" alt="Logo" />
+          </artcle>
+          <artcle class="col-7">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Inicio </a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link active" href="#">Mensualidad <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Contactenos</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </artcle>
+          <artcle class="col-4">
+            <form class="form-inline my-2 my-lg-0">
+              <input type="search" placeholder="Buscar..." class="form-control mt-2" />
+              <input type="button" value="Buscar" class="btn btn-outline-info mt-2" />
+            </form>
+          </artcle>
+        </section>
+        <section class="row">
+          <article class="col-12 banner">
+            <img class="img-fluid card-img img-banner" src="https://daiclover.com/static/media/daiclover3.dc475c68.png" />
+            <div class="banner-title">Mensualidad</div>
+            <div class="banner-title-1">Conjunto Residencial</div>
+          </article>
+        </section>
+      </header>
+      <section id="main" class="mt-4">
+        <article class="card text-center">
+          <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+              <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#crear-mensualidad-content" id="crear-mensualidad-tab">Crear Mensualidad</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#ver-estadistica-content" id="ver-estadistica-tab">Ver estadistica</a>
+              </li>
+            </ul>
+          </div>
+          <div class="card-body">
+            <div class="tab-content" id="content-tab">
+              <div class="tab-pane fade show active" id="crear-mensualidad-content" role="tabpanel">
+                <article class="row">
+                  <div class="col-10">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="fas fa-search-plus"></i>
+                        </div>
+                      </div>
+                      <input type="search" placeholder="filtrar" class="form-control" aria-label="Search">
+                    </div>
+                  </div>
+                  <div class="col-2">
+                    <button class="btn btn-info" type="button">
+                      <i class="fas fa-search-plus"></i>
+                    </button>
+                    <button class="btn btn-primary" type="button" id="btn-adicionar" data-toggle="modal" data-target="#modalMensualidad">
+                      <i class="fas fa-plus"></i>
+                    </button>
+                  </div>
+                </article>
+                <article class="row mt-3">
+                  <div class="col-12">
+                    <table class="table table-bordered" id="tbl-inmubles-mensualidad">
+                      <thead>
+                        <tr>
+                          <th>Nombre</th>
+                          <th>Edad</th>
+                          <th>Genero</th>
+                          <th>Total a pagar</th>
+                          <th>Fecha de mensualidad</th>
+                          <th>Acciones</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Carlos</td>
+                          <td>23 años</td>
+                          <td>Hombre</td>
+                          <td>$800.000</td>
+                          <td>2020-05-10</td>
+                          <td>
+                            <a href="#" class="btn btn-link">Ver</a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </article>
+              </div>
+              <div class="tab-pane fade" id="ver-estadistica-content" role="tabpanel">Estadisiticas</div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <section class="modal fade" id="modalMensualidad" tabindex="-1" aria-labelledby="modalMensualidad" aria-hidden="true" role="dialog">
+      <article class="modal-dialog modal-lg">
+        <article class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Nueva Mensaulidad</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <form id="frm-mensualidad">
+              <article class="card">
+                <div class="card-header">Datos de propietario</div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="form-group">
+                        <label for="nombre_propietario">Nombre (*)</label>
+                        <input type="text" id="nombre_propietario" class="form-control" placeholder="Agregar nombre de propietario" required value="Alejandro" maxlength="746" />
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-group">
+                        <label for="doc_propietario">Documento (*)</label>
+                        <input type="number" id="doc_propietario" class="form-control" placeholder="Agregar documento de propietario" value="1278987654" required />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row"></div>
+                </div>
+              </article>
+
+              <article class="card mt-3">
+                <div class="card-header">Datos de inmueble en la mensualidad</div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="form-group">
+                        <label for="metros_cuadrados">Metros<sup>2</sup> (*)</label>
+                        <input type="number" id="metros_cuadrados" class="form-control" placeholder="Metros cuadrados de la propiedad" required value="90" />
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-group">
+                        <label for="tipo_inmueble">Tipo (*)</label>
+                        <div>
+                          <div class="form-check-inline">
+                            <input type="radio" name="tipo_inmueble" class="form-check-input" value="A" checked id="tipo_inmueble_A">
+                            <label class="form-check-label" for="tipo_inmueble_A">Apartamento</label>
+                          </div>
+
+                          <div class="form-check-inline">
+                            <input type="radio" name="tipo_inmueble" class="form-check-input" value="C" id="tipo_inmueble_C">
+                            <label class="form-check-label" for="tipo_inmueble_C">Casa</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row"></div>
+                </div>
+              </article>
+            </form>
+          </div>
+          <!--este footer del modal-->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id="btn-guardar-mensualidad-inmueble">Guardar</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Salir</button>
+          </div>
+        </article>
+      </article>
+    </section>
+  </body>
+
+</html>
