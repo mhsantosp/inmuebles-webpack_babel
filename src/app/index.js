@@ -1,3 +1,5 @@
+import 'bootstrap'
+import "./../sass/styles.scss";
 import { Propietario, sumaNum, datos } from './clases/Propietario'
 
 

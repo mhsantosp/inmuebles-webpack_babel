@@ -1,17 +1,11 @@
+@import "~bootstrap/scss/bootstrap";
 $color-fondo: rgb(0, 153, 255);
 $color-texto: white;
 body {
-  background-color: $color-fondo;
-  color: $color-texto;
-  a {
-    color: red;
-    font-size: 18px;
+  @if 2 < 1 {
+    background-color: $color-fondo;
   }
-  h1 {
-    color: green;
-  }
-  p {
-    color: purple;
-    font-size: 25px;
+  @else {
+    background-color: $color-fondo;
   }
 }
